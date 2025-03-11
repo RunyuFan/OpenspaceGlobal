@@ -185,24 +185,24 @@ class Segformer_baseline(nn.Module):
         super(Segformer_baseline, self).__init__()
         self.n_class=n_class
         self.out_channels = 150
-        self.semantic_img_model = SegFormer('B1', self.out_channels)
-        self.semantic_img_model.load_state_dict(torch.load('.\\segformer.b1.ade.pth', map_location='cpu'))
+        self.semantic_img_model = SegFormer('B2', self.out_channels)
+        self.semantic_img_model.load_state_dict(torch.load('.\\segformer.b2.ade.pth', map_location='cpu'))
         # print(self.semantic_img_model)
         # self.semantic_mmdata_model = SegFormer('B3', self.out_channels)
         # self.semantic_mmdata_model.load_state_dict(torch.load('.\\segformer.b3.ade.pth', map_location='cpu'))
-
-        self.conv_block_fc = nn.Sequential(
-            # FCViewer(),
-            nn.Conv2d(150, self.n_class, kernel_size=(1, 1), stride=(1, 1)),
-            # nn.ReLU(inplace=True)
-            # # nn.Conv2d(self.dim, self.dim, kernel_size=(1, 1), stride=(1, 1))
-        )
+        self.semantic_img_model.decode_head = SegFormerHead([64, 128, 320, 512], 768, self.n_class)
+        # self.conv_block_fc = nn.Sequential(
+        #     # FCViewer(),
+        #     nn.Conv2d(150, self.n_class, kernel_size=(1, 1), stride=(1, 1)),
+        #     # nn.ReLU(inplace=True)
+        #     # # nn.Conv2d(self.dim, self.dim, kernel_size=(1, 1), stride=(1, 1))
+        # )
     def forward(self, h_rs):
         # print(h_rs.shape, x_floor.shape)
         # mmdata = torch.cat([h_rs, mmdata], 1)
-        features = self.semantic_img_model(h_rs)
+        out = self.semantic_img_model(h_rs)
 
-        out = self.conv_block_fc(features)
+        # out = self.conv_block_fc(features)
         # print(out.shape)
         out = F.interpolate(out, size=h_rs.shape[-2:], mode='bilinear', align_corners=False)
         return out
