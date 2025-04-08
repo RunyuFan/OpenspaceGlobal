@@ -5,5 +5,9 @@ Urban open space (UOS) plays an important role, especially in areas characterize
 
 # Dataset access link
 https://doi.org/10.57760/sciencedb.09109.
+
+# Article doi link
+https://www.nature.com/articles/s41597-025-04924-x
+
 # Citation
 Runyu Fan, Lizhe Wang (2024) . OpenspaceGlobal: the first urban open space product of global 169 megacities. V2. Science Data Bank. https://doi.org/10.57760/sciencedb.09109.
