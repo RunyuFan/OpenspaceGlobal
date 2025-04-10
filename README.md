@@ -10,4 +10,29 @@ https://doi.org/10.57760/sciencedb.09109.
 https://www.nature.com/articles/s41597-025-04924-x
 
 # Citation
-Runyu Fan, Lizhe Wang (2024) . OpenspaceGlobal: the first urban open space product of global 169 megacities. V2. Science Data Bank. https://doi.org/10.57760/sciencedb.09109.
+If it is helpful for you, please cite the following references.
+
+    @article{fan2025first,
+    
+      title={The first urban open space product of global 169 megacities using remote sensing and geospatial data},
+      
+      author={Fan, Runyu and Wang, Lizhe and Xu, Zijian and Niu, Hongyang and Chen, Jiajun and Zhou, Zhaoying and Li, Wenyue and Wang, Haoyu and Sun, Yuyue and Feng, Ruyi},
+      
+      journal={Scientific Data},
+      
+      volume={12},
+      
+      number={1},
+      
+      pages={586},
+      
+      year={2025},
+      
+      publisher={Nature Publishing Group UK London}
+    }
+
+
+
+ 
+
+
