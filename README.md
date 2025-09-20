@@ -20,8 +20,11 @@ If it is helpful for you, please cite the following references.
       number={1},
       pages={586},
       year={2025},
-      publisher={Nature Publishing Group UK London}
+      publisher={Nature Publishing Group UK London},
+	  doi={https://doi.org/10.1038/s41597-025-04924-x}
     }
+
+
 
 
 
